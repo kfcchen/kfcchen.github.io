@@ -1,0 +1,44 @@
+﻿@model _1101664.Models.TableAllroles1101664
+@{
+    ViewBag.Title = "想找什麼呢";
+}
+
+<div class="bg">
+    <img src="~/Models/image/hbg7.jpg" />
+</div>
+<div class="container" style="text-align:center">
+    <div>
+        <form action="@Url.Action("MyQuery")" method="post">
+            <p style="font-size: 25px; font-weight: 900;margin-top:100px;color:white">想了解哪位角色的能力呢?</p>
+            <p style="font-size: 24px; font-weight: 900; margin-top: 40px; color: #1e3124">
+                @Html.EditorFor(m => m.ability)
+                <input type="submit" value="查詢" class="btn" />
+            </p>
+        </form>
+    </div>
+</div>
+<style>
+
+    .btn 
+    {
+        font-weight:800;
+        font-size:18px;
+        width:70px;
+        background-color: #91baa9;
+    }
+    .bg 
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index:-999;
+        background-attachment: scroll;
+    }
+
+        .bg img {
+            min-height: 100%;
+            width: 100%;
+        }
+</style>

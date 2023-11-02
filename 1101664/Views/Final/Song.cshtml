@@ -1,0 +1,124 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<_1101664.Models.Tablesongs1101664>
+
+
+@{
+    ViewBag.Title = "歌曲欣賞";
+}
+
+@using (Html.BeginForm())
+{
+
+    <table class="table table-bordered table-hover" style="background-color: white; float: left; font-weight: 800; margin-top: 30px; padding: 1px">
+        <caption style="background-color: #b2cfcf ">歌曲資料</caption>
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Id)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().songname)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().singer)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().author)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().time)</th>
+                <th>異動</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => m.Id)</td>
+                    <td>@Html.DisplayFor(x => m.songname)</td>
+                    <td>@Html.DisplayFor(x => m.singer)</td>
+                    <td>@Html.DisplayFor(x => m.author)</td>
+                    <td>@Html.DisplayFor(x => m.time)</td>
+                    <td>
+                         @*@Html.ActionLink("明細", "DetailsM", new { Id = m.Id }, htmlAttributes: new { @class = "btn btn-info" })*@
+                         @Html.ActionLink("編輯", "EditS", new { Id = m.Id }, htmlAttributes: new { @class = "btn btnE" })
+                         @Html.ActionLink("刪除", "DeleteS", new { Id = m.Id }, htmlAttributes: new { @class = "btn btnD" })
+                     </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+        <tfoot>
+            <tr>
+                <!--<td colspan="10">-->
+                @*<img src="~/Models/image/one.jpg" style="height:50px;width:150px" />*@
+                <!--立即註冊!
+                <a href="CreateM"><input type="button" value="註冊會員" style="background-color: #E7F5FF; color: black; border: 3px dashed; border-color: #436a6e; width: 70px; height: 30px "></a>-->
+                @*@Html.ActionLink("創建角色", "CreateM", null, new { @class = "btn"})*@
+                <!--</td>-->
+            </tr>
+        </tfoot>
+    </table>
+    <a href="CreateS"><input type="button" value="新增歌曲" style="background-color: #80bbbd; color: white; border: 1px solid; width: 90px; height: 30px; float: right;font-size:15px;font-weight:700"></a>
+
+    @Html.PagedListPager(Model, page => Url.Action("Song", new { page }),
+    new PagedListRenderOptions
+    {
+        DisplayLinkToIndividualPages = false,
+        DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+        DisplayLinkToLastPage = PagedListDisplayMode.Always,
+        DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+        DisplayLinkToNextPage = PagedListDisplayMode.Always,
+        DisplayPageCountAndCurrentLocation = true,
+        DisplayItemSliceAndTotal = true,
+        PageCountAndCurrentLocationFormat = "第{0}/共{1}頁",
+        ItemSliceAndTotalFormat = "顯示項目:{0}~{1}/共{2}項"
+    })
+}
+
+
+@section topCSS
+{
+    <style>
+        .body {
+            font-family: DFWeiBei-B5;
+            font-size: 15px;
+            color: black;
+        }
+
+        .table > caption {
+            margin-top: 10px;
+            font-size: xx-large;
+        }
+
+        /*設定thead顏色*/
+        .table > thead > tr {
+            background-color: #98b3b3;
+        }
+
+        /*設定tfoot顏色及文字對齊*/
+        .table > tfoot > tr {
+            background-color: #80bbbd;
+        }
+
+        /*設定文字對齊*/
+        .table > caption, .table > thead > tr > th, .table > tfoot > tr {
+            text-align: center;
+        }
+        .btn:hover {
+            color: white;
+        }
+
+        .btnD {
+            margin-left: 15px;
+            background-color: #66d4d4;
+            color: black;
+            font-size: 15px;
+            font-weight: 500;
+            /*box-shadow: 0px 0px 2px 2px rgb(0,0,0);*/
+        }
+
+        .btnE {
+            margin-left: 8px;
+            background-color: #8fd9d9;
+            color: black;
+            font-size: 15px;
+            font-weight: 500;
+        }
+    </style>
+}
+
+
+

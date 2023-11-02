@@ -1,0 +1,113 @@
+﻿@model _1101664.Models.Tablelogins1101664
+
+@{
+    ViewBag.Title = "刪除會員";
+}
+
+<div class="container">
+    <div class="child1">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        要刪除 @Html.DisplayFor(m => m.name) 的會員資料嗎?
+                    </th>
+                </tr>
+            </thead>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.account)</td>
+                <td>@Html.DisplayFor(m => m.account)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.password)</td>
+                <td>@Html.DisplayFor(m => m.password)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.name)</td>
+                <td>@Html.DisplayFor(m => m.name)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.email)</td>
+                <td>@Html.DisplayFor(m => m.email)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.phonenumber)</td>
+                <td>@Html.DisplayFor(m => m.phonenumber)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.address)</td>
+                <td>@Html.DisplayFor(m => m.address)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="child2">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btnD" />
+            @Html.ActionLink("Back", "Member", null, htmlAttributes: new { @class = "btn btnB" })
+            @*@Html.ActionLink("Back to List", "Member")*@
+        </div>
+        }
+    </div>
+</div>
+
+
+<style>
+    .container 
+    {
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .child1 
+    {
+        height:300px;
+        width:300px;
+        margin-left:400px;
+        display: block;
+        
+    }
+    .child2 
+    {
+        
+        margin-left: 400px;
+        display: block;
+    }
+
+    .btn:hover 
+    {
+        color: white;
+        font-weight: 800;
+        background-color: #f7f7a1;
+    }
+    .btnB {
+        margin-left: 10px;
+        background-color: beige;
+        color: black;
+        font-size: 15px;
+        font-weight: 800;
+        width: 80px;
+    }
+
+    .btnD
+    {
+        background-color: #f7f7dc;
+        color: black;
+        font-size: 15px;
+        font-weight: 800;
+        width: 80px;
+    }
+</style>
+

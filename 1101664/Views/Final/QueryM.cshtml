@@ -1,0 +1,48 @@
+﻿@model _1101664.Models.Tablelogins1101664
+@{
+    ViewBag.Title = "會員查詢";
+}
+
+<div class="bg">
+    <img src="~/Models/image/hbg2.jpg" />
+</div>
+<div class="container" style="text-align:center">
+    <div>
+        <form action="@Url.Action("MyQueryM")" method="post">
+            <p style="font-size: 25px; font-weight: 900;margin-top:100px;color:white">會員姓名查詢:</p>
+            <p style="font-size: 20px; font-weight: 900; margin-top: 20px; color: black">
+                @Html.EditorFor(m => m.name)
+                <input type="submit" value="查詢" class="btn" />
+        </form>
+    </div>
+</div>
+<style>
+    .bg
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -999;
+        background-attachment: scroll;
+    }
+     .bg img
+     {
+         min-height: 100%;
+         width: 100%;
+     }
+    .btn:hover 
+    {
+        background-color:#f74545;
+        color:white;
+    }
+    .btn {
+        color: white;
+        font-weight: 800;
+        font-size: 16px;
+        width: 70px;
+        background-color: #cc1818;
+        
+    }
+</style>

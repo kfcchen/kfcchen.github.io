@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "查詢";
+}
+
+<p style="text-align:center;font-weight:800;font-size:40px;margin-top:30px">想找網頁上找甚麼呢?</p>
+
+<div class="bg">
+    <img src="~/Models/image/hbg.jpg" />
+</div>
+
+<div class="container" style="text-align:center">
+    <a href="Query"><input type="button" value="角色能力查詢"></a>
+    <a href="SelectQuery"><input type="button" value="角色姓名查詢"></a>
+    <a href="QueryM"><input type="button" value="會員姓名查詢"></a>
+</div>
+
+
+<style>
+    input
+    {
+        background-color: #9fccc7;
+        /*border-color: #5e7a8c;*/
+        border: 4px solid #698a86;
+        font-weight: 800;
+        color: black;
+        height: 60px;
+        width: 100px;
+        margin-top:15px;
+    }
+    .bg 
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -999;
+        background-attachment:scroll;
+    }
+
+        .bg img
+        {
+            min-height: 100%;
+            width: 100%;
+        }
+</style>
+

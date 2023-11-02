@@ -1,0 +1,60 @@
+﻿@model IEnumerable<_1101664.Models.TableAllroles1101664>
+
+@{
+    ViewBag.Title = "姓名查詢";
+}
+
+<div class="bg">
+    <img src="~/Models/image/hbg7.jpg" />
+</div>
+
+<div class="container" style="text-align:center">
+    
+    <form action="@Url.Action("MySelQuery")" method="post">
+        <p style="font-size: 25px; font-weight: 900;margin-top:100px;color:white">想更加了解哪位角色呢?</p>
+        <select name="name" class="sel">
+            @foreach (var m in Model)
+            {
+                <option value="@m.name" style="font-weight: 900;margin-top:100px">@m.name</option>
+            }
+        </select>
+        <input type="submit" value="查詢" class="btn" style="margin-top: 1px;margin-left:5px" />
+        
+
+    </form>
+</div>
+
+<style>
+
+    .sel 
+    {
+        border: 2px solid;
+        color: white;
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        background-color: #3d6147;
+    }
+    input
+    {
+        font-weight: 800;
+        font-size: 20px;
+        width: 80px;
+        background-color: #91baa9;
+    }
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -999;
+        background-attachment: scroll;
+    }
+
+    .bg img 
+    {
+       min-height: 100%;
+       width: 100%;
+    }
+</style>

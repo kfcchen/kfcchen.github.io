@@ -1,0 +1,96 @@
+﻿@model _1101664.Models.TableAllroles1101664
+@{
+    ViewBag.Title = "編輯資料";
+}
+
+<hr />
+
+<div class="container">
+    <div class="child1">
+        <table class="table table-hover table-striped table-bordered" style="margin-top:20px">
+            <caption style="text-align:center;font-size:15px">@Html.DisplayFor(m => m.name) 的角色資料</caption>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.Id)</td>
+                <td>@Html.DisplayFor(m => m.Id)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.name)</td>
+                <td>@Html.DisplayFor(m => m.name)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.category)</td>
+                <td>@Html.DisplayFor(m => m.category)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.age)</td>
+                <td>@Html.DisplayFor(m => m.age)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.height)</td>
+                <td>@Html.DisplayFor(m => m.height)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.ability)</td>
+                <td>@Html.DisplayFor(m => m.ability)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.attribute)</td>
+                <td>@Html.DisplayFor(m => m.attribute)</td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="child2">
+        @Html.ActionLink("Back", "AllRole", null ,htmlAttributes:new { @class = "btn btnB" })
+    </div>
+</div>
+
+
+
+
+<style>
+    .container 
+    {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: nowrap;
+        font-size:15px;
+        font-weight:500;
+    }
+
+    .child1
+    {  
+        margin-left:400px;
+        height:400px;
+        width:300px;
+        display: block;
+        flex-direction: column;
+    }
+
+    .child2 
+    {
+        margin-top: 350px;
+        display: block;
+    }
+    .btnB 
+    {
+        width:80px;
+        background-color: beige;
+        color: black;
+        font-size: 15px;
+        font-weight: 800;
+        /*box-shadow: 0px 0px 2px 2px rgb(0,0,0);*/
+    }
+    .btn:hover
+    {
+        font-weight:800;
+        color: white;
+        background-color: #f7f7a1;
+    }
+</style>

@@ -1,0 +1,59 @@
+﻿@model _1101664.Models.Tablelogins1101664
+@{
+    ViewBag.Title = "編輯會員資料";
+}
+
+<hr />
+
+<table class="table table-hover table-striped table-bordered" style="margin-top:20px">
+    <caption style="font-size:20px">@Html.DisplayFor(m => m.name) 的會員資料</caption>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.account)</td>
+        <td>@Html.DisplayFor(m => m.account)</td>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.password)</td>
+        <td>@Html.DisplayFor(m => m.password)</td>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.name)</td>
+        <td>@Html.DisplayFor(m => m.name)</td>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.email)</td>
+        <td>@Html.DisplayFor(m => m.email)</td>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.phonenumber)</td>
+        <td>@Html.DisplayFor(m => m.phonenumber)</td>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.address)</td>
+        <td>@Html.DisplayFor(m => m.address)</td>
+    </tr>
+
+</table>
+@Html.ActionLink("Back", "Member", null , htmlAttributes: new { @class = "btn btnB" })
+
+<style>
+    .btn:hover
+    {
+        font-weight: 800;
+        color: white;
+        background-color: #f7f7a1;
+    }
+    .btnB 
+    {
+        font-weight: 800;
+        width: 80px;
+        background-color: beige;
+        color: black;
+        font-size: 15px;
+        /*box-shadow: 0px 0px 2px 2px rgb(0,0,0);*/
+    }
+</style>

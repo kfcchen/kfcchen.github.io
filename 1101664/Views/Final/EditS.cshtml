@@ -1,0 +1,84 @@
+﻿@model _1101664.Models.Tablesongs1101664
+
+@{
+    ViewBag.Title = "編輯歌曲資料";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.songname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.songname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.songname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.singer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.singer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.singer, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.author, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.author, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.author, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.time, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.time, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.time, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btnE" />
+                @Html.ActionLink("Back", "Song", null, htmlAttributes: new { @class = "btn btnB" })
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    .btn:hover {
+        color: white;
+        background-color: #f7f7a1;
+    }
+
+    .btnE {
+        background-color: #f7f7dc;
+        color: black;
+        font-size: 15px;
+        font-weight: 800;
+        width: 80px;
+    }
+
+    .btnB {
+        margin-left: 10px;
+        font-size: 15px;
+        background-color: beige;
+        width: 80px;
+        color: black;
+        font-weight: 800;
+    }
+
+
+    .form-horizontal {
+        margin-left: 350px;
+    }
+</style>

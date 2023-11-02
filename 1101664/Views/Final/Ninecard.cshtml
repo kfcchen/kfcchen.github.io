@@ -1,0 +1,56 @@
+﻿@model IEnumerable<_1101664.Models.Card>
+
+@{
+    ViewBag.Title = "九柱";
+}
+
+<body style="background-color: #F4F2F3">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="contain" style="text-align:left">
+            <span>鬼殺隊-九柱</span>
+            <p style="font-size:15px;font-weight:500">
+                鬼殺隊的印記由名為「藤花雕」的特殊方式製作而成，
+                並以天干（甲～癸）分為十個階級，另有最高等級的劍士「柱」，階級越高所得就越高，能透過言語和肌肉膨脹，讓階級浮現在手背上。
+                進入鬼殺隊者會獲得製作日輪刀刀刃的玉鋼石、隊服以及一隻用於連絡用，會說人話的鎹鴉。
+            </p>
+        </div>
+    </div>
+    <div class="contain">
+        <div class="row">
+            @foreach (var nine in Model)
+            {
+                @Html.Partial("Ninecardp", nine);
+            }
+        </div>
+    </div>
+    <div style="float:right">
+        <a href="Ninecard" class="btn" style="background-color: #b2d6d2;text-align:center;height:30px"><p>返回上方</p></a>
+    </div>
+</body>
+@section topCSS
+{
+    <link href="~/Assets/css/card.css" rel="stylesheet" />
+    <style>
+        .body
+        {
+            font-family: DFWeiBei-B5;
+            font-size: 15px;
+            color: black;
+            font-weight:800;
+        }
+        .card 
+        {
+            text-align: center;
+            border: 3px solid black;
+            margin-bottom: 30%;
+            font-family: cursive
+        }
+
+        .jumbotron {
+            background-color: #a3d4d1;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+}
+

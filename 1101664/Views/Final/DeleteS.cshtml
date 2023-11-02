@@ -1,0 +1,105 @@
+﻿@model _1101664.Models.Tablesongs1101664
+
+@{
+    ViewBag.Title = "刪除歌曲";
+}
+
+<div class="container">
+    <div class="child1">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        要刪除 @Html.DisplayFor(m => m.songname) 這首歌的資料嗎?
+                    </th>
+                </tr>
+            </thead>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.Id)</td>
+                <td>@Html.DisplayFor(m => m.Id)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.songname)</td>
+                <td>@Html.DisplayFor(m => m.songname)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.singer)</td>
+                <td>@Html.DisplayFor(m => m.singer)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.author)</td>
+                <td>@Html.DisplayFor(m => m.author)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.time)</td>
+                <td>@Html.DisplayFor(m => m.time)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="child2">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btnD" />
+                @Html.ActionLink("Back", "Song", null, htmlAttributes: new { @class = "btn btnB" })
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .container {
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .child1
+    {
+        height: 300px;
+        width: 300px;
+        margin-left: 400px;
+        display: block;
+    }
+
+    .child2 
+    {
+        margin-left: 450px;
+        display: block;
+    }
+
+    .btn {
+        margin-top: 30px;
+        width: 80px;
+    }
+
+    .btnD {
+        background-color: cadetblue;
+        color: black;
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    .btnB {
+        margin-left: 10px;
+        background-color: cadetblue;
+        color: black;
+        font-size: 15px;
+        font-weight: 800;
+        width: 80px;
+    }
+
+    .btn:hover {
+        color: white;
+        background-color: #71bdbf;
+    }
+</style>

@@ -1,0 +1,149 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<_1101664.Models.TableAllroles1101664>
+
+@{
+    ViewBag.Title = "角色列表";
+}
+
+
+@using (Html.BeginForm())
+{
+<body style="background-color: #F4F2F3 ">
+    <table class="table table-striped table-bordered table-hover">
+        <caption style="background-color: #aed2d6; color: black; font-weight: 800 ">角色列表</caption>
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Id)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().name)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().category)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().age)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().height)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().ability)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstOrDefault().attribute)</th>
+                <th>異動</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => m.Id)</td>
+                    <td>@Html.DisplayFor(x => m.name)</td>
+                    <td>@Html.DisplayFor(x => m.category)</td>
+                    <td>@Html.DisplayFor(x => m.age)</td>
+                    <td>@Html.DisplayFor(x => m.height)</td>
+                    <td>@Html.DisplayFor(x => m.ability)</td>
+                    <td>@Html.DisplayFor(x => m.attribute)</td>
+
+                    <td>
+                        @Html.ActionLink("明細", "Details", new { Id = m.Id }, htmlAttributes: new { @class = "btn btnD" })
+                        @Html.ActionLink("編輯", "Edit", new { Id = m.Id }, htmlAttributes: new { @class = "btn btnE" })
+                        @Html.ActionLink("刪除", "Delete", new { Id = m.Id }, htmlAttributes: new { @class = "btn btnL" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="10">
+                    @*<img src="~/Models/image/one.jpg" style="height:50px;width:150px" />*@
+                    想要成為鬼滅之刃的一員嗎? 立即點擊創建角色!
+                    <a href="Create"><input type="button" value="創建角色" style="background-color: #d3eff2; color: black; border: 3px dashed; border-color: #436a6e; width: 80px; height: 30px "></a>
+                    @*@Html.ActionLink("創建角色", "CreateM", null, new { @class = "btn"})*@
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    @Html.PagedListPager(Model, page => Url.Action("AllRole", new { page }),
+   new PagedListRenderOptions
+   {
+       DisplayLinkToIndividualPages = false,
+       DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+       DisplayLinkToLastPage = PagedListDisplayMode.Always,
+       DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+       DisplayLinkToNextPage = PagedListDisplayMode.Always,
+       DisplayPageCountAndCurrentLocation = true,
+       DisplayItemSliceAndTotal = true,
+       PageCountAndCurrentLocationFormat = "第{0}/共{1}頁",
+       ItemSliceAndTotalFormat = "顯示項目:{0}~{1}/共{2}項"
+   })
+    <a href="SelectQuery" class="btn btnS" style="background-color: #d3eff2; float: left; font-weight: 800;font-size:15px"><p>想了解哪位角色呢?</p></a>
+</body>
+}
+
+
+@section topCSS
+{
+    <style>
+        .btnS :hover
+        {
+            color: orangered;
+        }
+        .btnS 
+        {
+            margin-top: 20px;
+            padding:2px;
+        }
+        .btn:hover 
+        {
+            color: white;
+        }
+
+        .btnD {
+            margin-left: 15px;
+            background-color: #b6e0d2;
+            color: black;
+            font-size: 15px;
+            font-weight: 500;
+            /*box-shadow: 0px 0px 2px 2px rgb(0,0,0);*/
+        }
+
+        .btnE {
+            margin-left: 8px;
+            background-color: #87c4bf;
+            color: black;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .btnL {
+            margin-left: 8px;
+            background-color: #538f8a;
+            color: black;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .body 
+        {
+            font-family: DFWeiBei-B5;
+            color: black;
+        }
+
+        .table > caption 
+        {
+            font-size: xx-large;
+            margin-top: 30px;
+        }
+
+        /*設定thead顏色*/
+        .table > thead > tr {
+            background-color: #d3eff2;
+        }
+
+        /*設定tfoot顏色及文字對齊*/
+        .table > tfoot > tr {
+            background-color: #aed2d6;
+        }
+
+        /*設定文字對齊*/
+        .table > caption, .table > thead > tr > th, .table > tfoot > tr {
+            text-align: center;
+        }
+    </style>
+}
+
+
+
+

@@ -1,0 +1,178 @@
+﻿@model _1101664.Models.Tablelogins1101664
+
+@{
+    ViewBag.Title = "Login";
+}
+<div id="container">
+    <h1> WELCOME </h1>
+    <form action="@Url.Action("Login")" method="post">
+        <div class="account">
+            <label for="text"> @ViewBag.Err </label>
+        </div>
+        <div class="account">
+            <label for="account"></label>
+            <input type="text" placeholder="My account is" name="account" id="name_input" required>
+        </div>
+        <div class="password">
+            <label for="password"></label>
+            <input type="password" placeholder="My password is" name="password" id="name_input" required>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Log In" id="form_button" />
+        </div>
+        <br />
+        <a href="Register" id="re" style="float:left"><h6>REGISTER RIGHT NOW</h6></a>
+    </form>
+</div>
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>account</th>
+                <th>password</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>1101664</td>
+                <td>1101664</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<style>
+    .table > tbody , .table > thead > tr > th, .table > tbody > tr > td, .table > thead
+    {
+        border:2px solid;
+    }
+    .table > caption, .table > thead > tr > th, .table > tfoot > tr 
+    {
+        
+        text-align: center;
+    }
+
+    a:link {
+        color: #5A5A5A;
+    }
+
+    /* 已存取連結 */
+    a:hover {
+        color: #748b6F;
+    }
+    .re {
+        font-family: 'Montserrat', Arial, sans-serif;
+    }
+    html
+    {
+        font-family: 'Montserrat', Arial, sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body 
+    {
+        background-color: #F4F2F3;
+
+    }
+
+    button {
+        overflow: visible;
+    }
+
+    button, input 
+    {
+        color: #5A5A5A;
+        font: inherit;
+        margin: 0;
+    }
+
+    input {
+        line-height: normal;
+    }
+
+    .container 
+    {
+        border: solid 3px #474544;
+        height: 400px;
+        width: 380px;
+        margin: 70px auto;
+        position: relative;
+    }
+
+    form 
+    {
+        padding: 37.5px;
+        margin: 30px;
+    }
+
+    h1{
+        text-decoration: underline;
+        border: 1px;
+        color: #474544;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 7px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    input[type='text'], [type='password'] {
+        background: none;
+        border: none;
+        border-bottom: solid 2px #474544;
+        color: #474544;
+        font-size: 1.000em;
+        font-weight: 400;
+        margin: 0em 0 1.875em 0;
+        padding: 0 0 0.875em 0;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #474544;
+    }
+
+    :-moz-placeholder {
+        color: #474544;
+        opacity: 1;
+    }
+
+    ::-moz-placeholder {
+        color: #474544;
+        opacity: 1;
+    }
+
+    :-ms-input-placeholder {
+        color: #474544;
+    }
+
+    #form_button {
+        background: none;
+        border: solid 2px #474544;
+        color: #474544;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Helvetica', Arial, sans-serif;
+        font-size: 0.875em;
+        font-weight: bold;
+        outline: none;
+        padding: 20px 35px;
+    }
+
+        #form_button:hover {
+            background: #C3CBD6;
+        }
+
+    #form_button {
+        padding: 15px 25px;
+    }
+
+    input[type='text'], [type='email'] {
+        font-size: 0.875em;
+    }
+</style>

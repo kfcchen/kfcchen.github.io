@@ -1,0 +1,129 @@
+﻿@model _1101664.Models.Tablelogins1101664
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+@using (Html.BeginForm())
+{
+<body>
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h2 style="text-align:center">註冊會員</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.account, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.account, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.account, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.phonenumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.phonenumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.phonenumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group"style="text-align: right">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="註冊" class="btn btnR" />
+                @*@Html.ActionLink("返回", "Login", null, htmlAttributes: new { @class = "btn btnB" })*@
+            </div>
+        </div>
+    </div>
+</body>
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@section topCSS
+{
+ <style>
+     body {
+         font-family: DFKai-sb;
+         background-color: #F4F2F3;
+     }
+     .form-horizontal {
+         border: 3px solid;
+         border-color: #647a5d;
+         border-radius: 42px;
+         padding: 24px;
+         position: relative;
+         width: 480px;
+         height: 560px;
+         margin-top: 20px;
+         margin-left: auto;
+         margin-right: auto;
+         margin-bottom: initial;
+         font-size: 18px;
+     }
+     .btnB 
+     {
+         border-color: #647a5d;
+         box-sizing: border-box;
+         outline: none;
+         padding: 18px 24px;
+         font-size: 15px;
+         font-weight: 600;
+         border-radius: 40px;
+         border: 2px solid;
+         margin: auto;
+         width:90px;
+     }
+     .btnR {
+         border-color: #647a5d;
+         box-sizing: border-box;
+         outline: none;
+         padding: 18px 24px;
+         font-size: 15px;
+         font-weight: 600;
+         border-radius: 40px;
+         border: 2px solid;
+         margin: auto;
+         width: 90px;
+     }
+     .btnB:hover {
+         border-color: none;
+     }
+   
+    </style>
+}

@@ -1,0 +1,15 @@
+﻿@model _1101664.Models.Card
+
+<body>
+    <div class=" col-xl-3 col-log-4 col-md-4 col-sm-4">
+        <div class="card">
+            <div class="headshot">
+                <img class="card-img-top" src="~/Models/image/@Model.Photo" alt="" width="350" height="350" onMouseOver="this.width=this.width*1.2;this.height=this.height*1.2" onMouseOut="this.width=this.width/1.2;this.height=this.height/1.2">
+            </div>
+            <div class="card-block">
+                <h3 class="card-title">@Model.Name</h3>
+                <h3 class="card-title">@Model.Brief</h3>
+            </div>
+        </div>
+    </div>
+</body>

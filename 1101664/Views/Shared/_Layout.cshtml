@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("topCSS", required: false)
+    @RenderSection("topCSSS", required: false)
+</head>
+<body>
+    <nav class="nav navbar-default navbar-fixed-top navbar-dark" style="background-color: #C7D6D5; font-size: 18px; font-family: DFWeiBei-B5; color: black ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="~/Models/image/pic.png" style="height:48px" />
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("鬼滅之刃", "Index", null, htmlAttributes: new { @class = "nav" })</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><strong>角色介紹</strong><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("九柱", "Ninecard", null, htmlAttributes: new { @class = "nav" })</li>
+                            <li>@Html.ActionLink("上弦", "Twelve", null, htmlAttributes: new { @class = "nav" })</li>
+                            <li>@Html.ActionLink("下弦", "Twelve2", null, htmlAttributes: new { @class = "nav" })</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("歌曲欣賞", "Song", null, htmlAttributes: new { @class = "nav" })</li>
+                    <li>@Html.ActionLink("角色列表", "AllRole", null, htmlAttributes: new { @class = "nav" })</li>
+                    <li>@Html.ActionLink("會員列表", "Member", null, htmlAttributes: new { @class = "nav" })</li>
+                    <li>@Html.ActionLink("各項查詢", "Inquire", null, htmlAttributes: new { @class = "nav" })</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("登入", "Login", null, htmlAttributes: new { @class = "nav" })</li>
+                    <li>@Html.ActionLink("登出", "Logout", null, htmlAttributes: new { @class = "nav" })</li>
+                    <li>@Html.ActionLink("註冊", "Register", null, htmlAttributes: new { @class = "nav" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            @*<p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>*@
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+
+
+@*<ul class="nav navbar-nav navbar-fixed-top navbar-inverse" id="nav" style="background-color:darkred ">
+        <li><img src="~/Models/image/pic.png" style="height:48px"></li>
+        <li><a href="Index"><strong>鬼滅之刃</strong></a></li>
+        <li><a href="Ninecard"><strong>九柱</strong></a></li>
+        <li class="dropdown" style="background-color:darkred">
+            <a class="dropdown-toggle" data-toggle="dropdown"><strong>十二鬼月</strong><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="Twelve"><strong>上弦</strong></a></li>
+                <li><a href="#"><strong>下弦</strong></a></li>
+            </ul>
+        </li>
+        <li><a href="Table"><strong>其他</strong></a></li>
+        <li><a href="Query"><strong>查詢</strong></a></li>
+    </ul>*@
